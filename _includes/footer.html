@@ -19,7 +19,6 @@
       </footer>
     </div><!-- /.container -->
 
-
   <script id="suggestion-item-template" type="text/template">
   {%raw %}
   {{#isCategoryHeader}}<div class="suggestion-category">{{{category}}}</div>{{/isCategoryHeader}}
@@ -33,33 +32,151 @@
   </div>
   {% endraw %}
   </script>
-
+  {% if page.homepage %}
+    <script id="logo-template" type="text/template">
+      <div>
+        {{#each logos}}
+          <div class="slide col-sm-4">
+            <a href="logo.url">
+              <img src="logos.src" alt="logos.name">
+            </a>
+          </div>
+        {{/each}}
+      </div>
+    </script>
+  {% endif %}
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/g/lodash@3.10.1,hogan.js@3.0.2,algoliasearch@3.8.1,autocomplete.js@0.12.0(autocomplete.min.js)" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.15/bootstrap-native.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js" defer></script>
-  <script src="/js/app/search.js" defer></script>
+  <script src="/js/app/anchor.js" defer></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       anchors.add('.doc h2, .doc h3, .doc h4, .blog h2, .blog h3, .blog h4');
+      var client = algoliasearch("XWXG7MEBSB", "653e00f423bee91f9863571eed16f2f5");
+      var suggestionTemplate = window.Hogan.compile($("#suggestion-item-template").text());
+      var searchInputSelector = "#eslint-search-input";
+      var $searchInput = document.querySelector(searchInputSelector);
+      var suggestionFooter = "<a class=\"suggestion-footer\" href=\"https://www.algolia.com/?utm_source=eslint\" target=\"_blank\">powered by <span class=\"suggestion-footer-logo\">Algolia</span></a>";
 
-      {% if page.homepage %}
-      var hasClass = function(element, className) {
-        return document.querySelector(element).classList.contains(className);
-      };
-      var createNode = function (html) {
-        var range = document.createRange();
-        range.selectNode(document.getElementsByTagName('div').item(0));
-        return range.createContextualFragment(html);
-      };
-      function shuffleArray(array) {
-        for (var i = array.length - 1; i > 0; i--) {
-          var j = Math.floor(Math.random() * (i + 1));
-          var temp = array[i];
-          array[i] = array[j];
-          array[j] = temp;
+      // Reorder hits to group them by section
+      function formatHits(hits) {
+
+        // Flatten all values into one array, marking the first element with
+        // `flagName`
+        function flattenObject(o, flagName) {
+          var values = _.map(_.values(o), function(value) {
+            value[0][flagName] = true;
+            return value;
+          });
+
+          return _.flatten(values);
         }
-        return array;
+
+        // Group hits by category / subcategory
+        var groupedHits = _.groupBy(hits, "category");
+
+        _.each(groupedHits, function(list, category) {
+          var groupedHitsBySubCategory = _.groupBy(list, "subcategory");
+          var flattenedHits = flattenObject(groupedHitsBySubCategory, "isSubcategoryHeader");
+
+          groupedHits[category] = flattenedHits;
+        });
+        groupedHits = flattenObject(groupedHits, "isCategoryHeader");
+
+        // Translate hits into smaller objects to be send to the template
+        return _.map(groupedHits, function(hit) {
+          return {
+            isCategoryHeader: hit.isCategoryHeader,
+            isSubcategoryHeader: hit.isSubcategoryHeader,
+            /* eslint-disable no-underscore-dangle */
+            category: hit._highlightResult.category ? hit._highlightResult.category.value : hit.category,
+            subcategory: hit._highlightResult.subcategory ? hit._highlightResult.subcategory.value : hit.category,
+            title: hit._highlightResult.display_title ? hit._highlightResult.display_title.value : hit.display_title,
+            text: hit._snippetResult ? hit._snippetResult.text.value : hit.text,
+            /* eslint-enable no-underscore-dangle */
+            url: hit.url
+          };
+        });
       }
+
+      // Calls the Algolia API to get results matching the query
+      function autocompleteSource(query, callback) {
+        client.search([{
+          indexName: "eslint",
+          query: query,
+          params: {
+            hitsPerPage: 5
+          }
+        }], function(err, data) {
+          if (err) {
+            console.error(err); // eslint-disable-line no-console
+          }
+          callback(formatHits(data.results[0].hits));
+        });
+      }
+
+      var search = autocomplete(searchInputSelector, {
+        hint: false
+      }, [
+        {
+          source: autocompleteSource,
+          displayKey: function() {
+            return $searchInput.val();
+          },
+          templates: {
+            suggestion: function(suggestion) {
+              return suggestionTemplate.render(suggestion);
+            },
+            footer: function() {
+              return suggestionFooter;
+            }
+          }
+        }
+      ]).on("autocomplete:selected", function(event, suggestion) {
+        search.autocomplete.setVal("");
+        window.location.href = suggestion.url;
+      });
+
+      // Init autocomplete
+      var htmlClassList = document.documentElement.classList;
+
+      htmlClassList.remove("no-js");
+      htmlClassList.add("js");
+
+      // Toggle and focus the search bar when clicking on the magnifying glass on
+      // small devices. This is achieved through a label and corresponding
+      // checkbox.
+      // This could have been done in complete HTML except that it does not work
+      // on iOS (focus can only be triggered from user interaction), so we need to
+      // replicate the behavior using JavaScript.
+      var $toggleCheckbox = document.querySelector("#eslint-toggle-search");
+      var $toggleLabels = document.querySelector(".eslint-toggle-search-open");
+
+      $toggleLabels.addEventListener("click", function(e) {
+        $toggleCheckbox.click();
+        $searchInput.focus();
+
+        e.preventDefault();
+      });
+      {% if page.homepage %}
+        var hasClass = function(element, className) {
+          return document.querySelector(element).classList.contains(className);
+        };
+        var createNode = function (html) {
+          var range = document.createRange();
+          range.selectNode(document.getElementsByTagName('div').item(0));
+          return range.createContextualFragment(html);
+        };
+        function shuffleArray(array) {
+          for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+          }
+          return array;
+        }
 
       var logosNode = document.querySelector('.logos');
       var logos = [{% for logo in site.data.logos %}{ url: '{{ logo.url }}', src: '{{ site.url }}{{ logo.src }}', name: '{{ logo.name }}' }{% unless forloop.last %},{% endunless %}{% endfor %}];
@@ -76,20 +193,31 @@
         logosNode.appendChild(logo);
       }
 
-      var expenderNode = document.querySelector('.expender');
-      expenderNode.addEventListener('click', function() {
-        if (hasClass('.logos', 'expended')) {
-          logosNode.classList.remove('expended');
-          logosNode.style['max-height'] = '150px';
-          expenderNode.innerHTML = 'see more <span class="caret"/>';
-        } else {
-          logosNode.classList.add('expended');
-          logosNode.style['max-height'] = '5000px';
-          expenderNode.innerHTML = 'see less <span class="dropup"><span class="caret"></span></span>';
-        }
-      });
+        var expenderNode = document.querySelector('.expender');
+        expenderNode.addEventListener('click', function() {
+          if (hasClass('.logos', 'expended')) {
+            logosNode.classList.remove('expended');
+            logosNode.style['max-height'] = '150px';
+            expenderNode.innerHTML = 'see more <span class="caret"/>';
+          } else {
+            logosNode.classList.add('expended');
+            logosNode.style['max-height'] = '5000px';
+            expenderNode.innerHTML = 'see less <span class="dropup"><span class="caret"></span></span>';
+          }
+        });
       {% endif %}
+
     });
   </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-60915033-1', 'eslint.org');
+    ga('send', 'pageview');
+  </script>
+
 </body>
 </html>
