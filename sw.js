@@ -710,8 +710,104 @@ workboxSW.precache([
     "revision": "752202ff78eb3fe9d0514d3aceb208ad"
   },
   {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/example-dowhilestatement.svg",
+    "revision": "c9adb734dd9f803da40a5003ca44f528"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/example-forinstatement.svg",
+    "revision": "fc2ac0741413ce21864165b9f124056f"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/example-forstatement-for-ever.svg",
+    "revision": "280235fd605faccaf13623c5efbce92c"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/example-forstatement.svg",
+    "revision": "e74eb15320108529701e9fdeec799f0f"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/example-hello-world.svg",
+    "revision": "1e0ec05669b771491795edba8ebfceb9"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/example-ifstatement-chain.svg",
+    "revision": "8d489fe5e63ecd7fc4ba07eeabf07e01"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/example-ifstatement.svg",
+    "revision": "ab919ba33dceabdffee1b2256560e2e0"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/example-switchstatement-has-default.svg",
+    "revision": "20b83fcddb30ece08aa0d83a7ad59972"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/example-switchstatement.svg",
+    "revision": "44461cdbec4273c1441591558c141a38"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/example-trystatement-try-catch-finally.svg",
+    "revision": "e6dd13e96c5192d3e9ab133b2054bf41"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/example-trystatement-try-catch.svg",
+    "revision": "d5c7646cda00b8f5e286653ec6df0b64"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/example-trystatement-try-finally.svg",
+    "revision": "081d1ab55f946c6bdc0d69c8c4cedab4"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/example-when-there-is-a-function-f.svg",
+    "revision": "475fe1216c7fc0778148d6d5f7698a7d"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/example-when-there-is-a-function-g.svg",
+    "revision": "e7aae826d828d54dd8257968bc66d783"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/example-whilestatement.svg",
+    "revision": "ff9ec23dca854dc637301a3fc61761af"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/helo.svg",
+    "revision": "60da91c1924a3e27562ba5985bb4f209"
+  },
+  {
     "url": "docs/4.0.0/developer-guide/code-path-analysis/index.html",
     "revision": "2e76368772a7198457f4618e7c61a94c"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/loop-event-example-for-1.svg",
+    "revision": "7644c2583daa121ea80ef35a937c83a9"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/loop-event-example-for-2.svg",
+    "revision": "0b35df8210e2e61a8e0ddee0af183040"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/loop-event-example-for-3.svg",
+    "revision": "259fe9492ac73786175bc68bb9b53017"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/loop-event-example-for-4.svg",
+    "revision": "4eeaabf64015e00e1f1226925971181a"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/loop-event-example-for-5.svg",
+    "revision": "7b5d2a93125235d8cae7c73f339086cb"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/loop-event-example-while-1.svg",
+    "revision": "3cf23fba2157ee6855eb55ad75765b68"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/loop-event-example-while-2.svg",
+    "revision": "8421e8eb54f10590c8d685275659f87a"
+  },
+  {
+    "url": "docs/4.0.0/developer-guide/code-path-analysis/loop-event-example-while-3.svg",
+    "revision": "ba9d12ebe7c5f5ff2f55f061b5dbc52c"
   },
   {
     "url": "docs/4.0.0/developer-guide/contributing/changes.html",
@@ -1950,8 +2046,104 @@ workboxSW.precache([
     "revision": "9ef788fafc3c35d6ba43de3af861db90"
   },
   {
+    "url": "docs/developer-guide/code-path-analysis/example-dowhilestatement.svg",
+    "revision": "c9adb734dd9f803da40a5003ca44f528"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/example-forinstatement.svg",
+    "revision": "fc2ac0741413ce21864165b9f124056f"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/example-forstatement-for-ever.svg",
+    "revision": "280235fd605faccaf13623c5efbce92c"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/example-forstatement.svg",
+    "revision": "e74eb15320108529701e9fdeec799f0f"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/example-hello-world.svg",
+    "revision": "1e0ec05669b771491795edba8ebfceb9"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/example-ifstatement-chain.svg",
+    "revision": "8d489fe5e63ecd7fc4ba07eeabf07e01"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/example-ifstatement.svg",
+    "revision": "ab919ba33dceabdffee1b2256560e2e0"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/example-switchstatement-has-default.svg",
+    "revision": "20b83fcddb30ece08aa0d83a7ad59972"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/example-switchstatement.svg",
+    "revision": "44461cdbec4273c1441591558c141a38"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/example-trystatement-try-catch-finally.svg",
+    "revision": "e6dd13e96c5192d3e9ab133b2054bf41"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/example-trystatement-try-catch.svg",
+    "revision": "d5c7646cda00b8f5e286653ec6df0b64"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/example-trystatement-try-finally.svg",
+    "revision": "081d1ab55f946c6bdc0d69c8c4cedab4"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/example-when-there-is-a-function-f.svg",
+    "revision": "475fe1216c7fc0778148d6d5f7698a7d"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/example-when-there-is-a-function-g.svg",
+    "revision": "e7aae826d828d54dd8257968bc66d783"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/example-whilestatement.svg",
+    "revision": "ff9ec23dca854dc637301a3fc61761af"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/helo.svg",
+    "revision": "60da91c1924a3e27562ba5985bb4f209"
+  },
+  {
     "url": "docs/developer-guide/code-path-analysis/index.html",
     "revision": "ec4512e4f631a7c5ed6955e9ffa7988f"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/loop-event-example-for-1.svg",
+    "revision": "7644c2583daa121ea80ef35a937c83a9"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/loop-event-example-for-2.svg",
+    "revision": "0b35df8210e2e61a8e0ddee0af183040"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/loop-event-example-for-3.svg",
+    "revision": "259fe9492ac73786175bc68bb9b53017"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/loop-event-example-for-4.svg",
+    "revision": "4eeaabf64015e00e1f1226925971181a"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/loop-event-example-for-5.svg",
+    "revision": "7b5d2a93125235d8cae7c73f339086cb"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/loop-event-example-while-1.svg",
+    "revision": "3cf23fba2157ee6855eb55ad75765b68"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/loop-event-example-while-2.svg",
+    "revision": "8421e8eb54f10590c8d685275659f87a"
+  },
+  {
+    "url": "docs/developer-guide/code-path-analysis/loop-event-example-while-3.svg",
+    "revision": "ba9d12ebe7c5f5ff2f55f061b5dbc52c"
   },
   {
     "url": "docs/developer-guide/contributing/changes.html",
@@ -3210,12 +3402,20 @@ workboxSW.precache([
     "revision": "aa16cd35628e6dddf56e766c9aa4ae63"
   },
   {
+    "url": "fonts/glyphicons-halflings-regular.svg",
+    "revision": "0a5c48c69a25a93e37ed62db813387fa"
+  },
+  {
     "url": "fonts/glyphicons-halflings-regular.ttf",
     "revision": "47da44498fc073d9fff9ab0cdb0bef8e"
   },
   {
     "url": "fonts/glyphicons-halflings-regular.woff",
     "revision": "5eae1f7217b606d3580dd70ac840fea1"
+  },
+  {
+    "url": "img/background.svg",
+    "revision": "c1c9baed60479a1dddbd4774ebda211e"
   },
   {
     "url": "img/favicon.512x512.png",
@@ -3226,12 +3426,24 @@ workboxSW.precache([
     "revision": "061d7c3a4668e0927bc077e8b8c025b4"
   },
   {
+    "url": "img/logo.svg",
+    "revision": "3b4f6be2b7637ca9cd7529f15589708a"
+  },
+  {
+    "url": "img/logos/2gis.svg",
+    "revision": "729408ddec29b5feef96720938f574db"
+  },
+  {
     "url": "img/logos/airbnb.png",
     "revision": "d90cd75853c9144a60b0ff7dc9f362a3"
   },
   {
     "url": "img/logos/airhelp.png",
     "revision": "ac4800f7e916945c37f88425a7295b5b"
+  },
+  {
+    "url": "img/logos/algolia.svg",
+    "revision": "fa22b8c0851684c9cbfc72569499d5ee"
   },
   {
     "url": "img/logos/alianza.png",
@@ -3242,8 +3454,28 @@ workboxSW.precache([
     "revision": "62dfe21c82f1b41be086b4cfbaaa831e"
   },
   {
+    "url": "img/logos/ark.svg",
+    "revision": "544e0e619ad3a7d878c6f1b414e7c0b8"
+  },
+  {
+    "url": "img/logos/atlassian.svg",
+    "revision": "f8ff567098f780b66a3887146a4694cb"
+  },
+  {
+    "url": "img/logos/bluecore.svg",
+    "revision": "1ed02759bd3f22029bef11fdd1d301b5"
+  },
+  {
     "url": "img/logos/box.png",
     "revision": "c44715ece9cf6942b779ce7c7c611f8e"
+  },
+  {
+    "url": "img/logos/brigade.svg",
+    "revision": "fe0dd0ebd0eddcd4bf7f102bd0b85535"
+  },
+  {
+    "url": "img/logos/camptocamp.svg",
+    "revision": "ebd17aaf7470953205cf325944c1d7d9"
   },
   {
     "url": "img/logos/cerner.png",
@@ -3256,6 +3488,18 @@ workboxSW.precache([
   {
     "url": "img/logos/codinum.png",
     "revision": "c7961df168864a0753995b816501a9c0"
+  },
+  {
+    "url": "img/logos/computerbase.svg",
+    "revision": "1b4fb2567488083081458fa9b522adee"
+  },
+  {
+    "url": "img/logos/disqus.svg",
+    "revision": "c289912fb245bfb50b6cbf9a55f29fca"
+  },
+  {
+    "url": "img/logos/domain.svg",
+    "revision": "9e0f9d0fe0e333ecc883f7a6be8ee2a6"
   },
   {
     "url": "img/logos/facebook.png",
@@ -3274,8 +3518,24 @@ workboxSW.precache([
     "revision": "692ea8ccaf3b2a93474835f405a6e7fb"
   },
   {
+    "url": "img/logos/jeuxvideo.com.svg",
+    "revision": "8a500e649aa8587126a831590404dd4c"
+  },
+  {
     "url": "img/logos/kahoot.png",
     "revision": "75f9db59d2c3f4c0991b6d39ef4bd457"
+  },
+  {
+    "url": "img/logos/microsoft.svg",
+    "revision": "f41bfbce87a7780476df35c7e63b19e5"
+  },
+  {
+    "url": "img/logos/millenium.svg",
+    "revision": "3745b12f440d69e44c51cb5d36ca84f2"
+  },
+  {
+    "url": "img/logos/netflix.svg",
+    "revision": "277ba5c7db30bede5e6e9c235e70a524"
   },
   {
     "url": "img/logos/paperlesspost.png",
@@ -3284,6 +3544,10 @@ workboxSW.precache([
   {
     "url": "img/logos/paypal.png",
     "revision": "bbe2d29f5cbd948df80c07d0fca4c24e"
+  },
+  {
+    "url": "img/logos/paypal.svg",
+    "revision": "537271512ccff88100581135c353bb25"
   },
   {
     "url": "img/logos/phoenixrobotix.png",
@@ -3314,6 +3578,10 @@ workboxSW.precache([
     "revision": "2ace5c8698975d43520057bb210e8b04"
   },
   {
+    "url": "img/logos/tanda.svg",
+    "revision": "3257bc73742cfb9137169ae6642c6782"
+  },
+  {
     "url": "img/logos/the-native-web.png",
     "revision": "51c9386e9764b9464feb6b132908a4d2"
   },
@@ -3328,6 +3596,10 @@ workboxSW.precache([
   {
     "url": "img/logos/windsorcircle.png",
     "revision": "d79745db37568eb4398f4c012f364eb1"
+  },
+  {
+    "url": "img/logos/zendesk.svg",
+    "revision": "13abb2483326567421ad8076917cc5c1"
   },
   {
     "url": "index.html",
@@ -3850,6 +4122,16 @@ workboxSW.precache([
 workboxSW.router.registerRoute('https://fonts.googleapis.com/(.*)',
   workboxSW.strategies.cacheFirst({
     cacheName: 'googleapis',
+    cacheableResponse: {
+      statuses: [0, 200]
+    },
+    networkTimeoutSeconds: 4
+  })
+);
+
+workboxSW.router.registerRoute('https://fonts.gstatic.com/(.*)',
+  workboxSW.strategies.cacheFirst({
+    cacheName: 'gstatic',
     cacheableResponse: {
       statuses: [0, 200]
     },
